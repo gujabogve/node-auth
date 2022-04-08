@@ -1,0 +1,21 @@
+.env
+
+.idea/
+.vscode/
+node_modules/
+npm-debug.log
+coverage/
+
+# In case of file uploads
+files/*
+!files/.gitkeep
+
+# compiled js files (Typescript)
+bin/www.js
+src/**/*.js
+scripts/*.js
+
+# sequelize migration config
+config/config.json
+
+scripts/**/*.js
