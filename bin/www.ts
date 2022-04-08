@@ -2,7 +2,7 @@ import os from 'os';
 import cluster from 'cluster';
 import { logger } from '../src/logger';
 const threadsCount = Number(process.env.THREADS_COUNT) || os.cpus().length / 2;
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 if (cluster.isMaster) {
   console.log(`Master PID is ${process.pid}`);
