@@ -7,9 +7,6 @@ export interface UserAttributes {
     lastName: string | null;
     password: string;
     email: string | null;
-    phone: string | null;
-    birthday: Date | null;
-    gender: string | null;
     isActive: boolean;
 }
 
@@ -19,15 +16,12 @@ export interface UserCreationAttributes
 
 
 export class User extends Model<UserAttributes, UserCreationAttributes> implements UserAttributes {
-    public birthday!: Date | null;
     public email!: string | null;
     public firstName!: string | null;
-    public gender!: string | null;
     public id!: string;
     public isActive!: boolean;
     public lastName!: string | null;
     public password!: string;
-    public phone!: string | null;
 
     public readonly createdAt!: Date;
     public readonly updatedAt!: Date;
@@ -60,18 +54,6 @@ export class User extends Model<UserAttributes, UserCreationAttributes> implemen
                     set(email: string): void {
                         this.setDataValue('email', email?.toLowerCase());
                     },
-                },
-                phone: {
-                    type: DataTypes.STRING,
-                    allowNull: true,
-                },
-                birthday: {
-                    type: DataTypes.DATE,
-                    allowNull: true,
-                },
-                gender: {
-                    type: DataTypes.STRING,
-                    allowNull: true,
                 },
                 isActive: {
                     type: DataTypes.BOOLEAN,
