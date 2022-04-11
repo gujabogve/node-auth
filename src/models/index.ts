@@ -24,6 +24,7 @@ export const sequelize = new Sequelize(
 User.initializeModel(sequelize);
 Session.initializeModel(sequelize);
 
+Session.associate();
 
 export {
     User,
